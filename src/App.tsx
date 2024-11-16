@@ -10,7 +10,7 @@ import NavBar from "./components/NavBar";
 function App() {
     return (
         <Router>
-            <div className="App flex h-screen flex-col">
+            <div className="App flex flex-col">
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<Home />} />
