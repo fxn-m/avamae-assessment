@@ -14,12 +14,11 @@ interface Data {
 }
 
 const makeBulletPoints = (lorem: string) => {
-    // Split the string into an array of words
     const words = lorem.split(" ");
     const numberOfWords = words.length;
     const wordsPerLine = Math.floor(numberOfWords / 4);
     const lines = [];
-    // Loop through the words and add them to the lines
+
     for (let i = 0; i < words.length; i += wordsPerLine) {
         lines.push(words.slice(i, i + wordsPerLine).join(" "));
     }
@@ -40,7 +39,6 @@ export default function Home() {
         (async () => {
             const response = await fetch("https://jsonplaceholder.typicode.com/posts");
             const result = await response.json();
-            console.log(result);
             setLorems(result);
         })();
     }, []);
@@ -68,7 +66,7 @@ export default function Home() {
                         </div>
                         {data.slice(0, 2).map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className="relative mb-6 h-[410px] w-full overflow-hidden">
+                                <div className="relative mb-6 h-[445px] w-full overflow-hidden">
                                     <img src={item.ImageUrl} className="h-full w-full object-cover object-[50%_25%]" />
 
                                     <div className="absolute inset-0 flex w-full flex-col items-start justify-center bg-gradient-to-r from-black/80 to-transparent to-50% p-6">
@@ -108,11 +106,19 @@ export default function Home() {
                         <img src={data[1].ImageUrl} className="mb-4 h-80 rounded-md object-cover" />
                     </div>
 
-                    <div className="pt-10">
-                        <div className="mb-6">
-                            <img src={data[2].ImageUrl} className="mb-4 h-64 w-full object-cover" />
-                            <h2 className="text-xl font-bold">{data[2].Title}</h2>
-                            <p className="text-gray-700">{data[2].Subtitle}</p>
+                    <div className="relative mb-6 mt-10 h-[445px] w-full overflow-hidden">
+                        <img src={data[2].ImageUrl} className="mb-4 h-[435px] w-full object-cover object-[50%_10%]" />
+
+                        <div className="absolute inset-0 flex w-full flex-col items-start justify-center">
+                            <div className="mx-auto w-3/5">
+                                <div className="h-80 w-96 space-y-4 bg-black/50">
+                                    <h2 className="text-4xl font-bold text-white">{data[2].Title}</h2>
+                                    <p className="text-md text-white">{data[2].Subtitle}</p>
+                                    <Link to="/contact-us" className="mt-4 inline-block rounded-md bg-blue-400 px-6 py-3 text-xs font-extrabold text-white">
+                                        Contact Us
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </>
