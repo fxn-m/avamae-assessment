@@ -5,7 +5,7 @@ function NavBar() {
         <nav className="h-14 border-b border-gray-200">
             <div className="container mx-auto flex h-full items-center justify-between">
                 <div className="flex items-center space-x-3">
-                    <img src="./logo.png" className="h-10" alt="Logo" />
+                    <img src="https://ccsrents.com/wp-content/uploads/2020/12/cropped-CCSLogofavicon.png" className="h-10" alt="Logo" />
                     <p className="text-xl font-bold">COMPANY</p>
                 </div>
 
@@ -22,9 +22,7 @@ function NavBar() {
                         </Link>
                     </div>
 
-                    <Link to="/login" className="rounded-md bg-blue-100 px-7 py-3 text-xs font-semibold text-blue-600 hover:bg-blue-200">
-                        Log in
-                    </Link>
+                    <div className="cursor-pointer rounded-md bg-blue-100 px-7 py-3 text-xs font-semibold text-blue-600 hover:bg-blue-200">Log in</div>
                 </div>
             </div>
         </nav>

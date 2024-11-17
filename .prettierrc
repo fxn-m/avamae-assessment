@@ -13,5 +13,13 @@
     "tabWidth": 4,
     "trailingComma": "none",
     "useTabs": false,
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "overrides": [
+        {
+        "files": "*.json",
+        "options": {
+            "parser": "json"
+        }
+        }
+    ]
 }

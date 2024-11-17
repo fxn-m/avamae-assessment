@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
     return (
-        <Router>
+        <Router basename="/avamae-assessment/">
             <div className="App flex min-h-screen flex-col">
                 <NavBar />
                 <Routes>
