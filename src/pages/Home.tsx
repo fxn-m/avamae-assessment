@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { Triangle } from "lucide-react";
+import lorems from "@/assets/posts.json";
 
 interface Data {
     Title: string;
@@ -27,24 +28,12 @@ const makeBulletPoints = (lorem: string) => {
 
 export default function Home() {
     const [data, setData] = useState<Data[] | null>(null);
-    const [lorems, setLorems] = useState<Record<string, string>[]>([]);
 
     useEffect(() => {
         (async () => {
             const response = await fetch("https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details");
             const result = await response.json();
             setData(result.Details);
-        })();
-
-        (async () => {
-            try {
-                const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-                const result = await response.json();
-                console.log(result);
-                setLorems(result);
-            } catch (error) {
-                console.error(error);
-            }
         })();
     }, []);
 
@@ -72,12 +61,12 @@ export default function Home() {
                         {data.slice(0, 2).map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="relative mb-6 h-[445px] w-full overflow-hidden">
-                                    <img src={item.ImageUrl} className="h-full w-full object-cover object-[50%_25%]" />
+                                    <img src={item.ImageUrl} className={`h-full w-full object-cover object-[${index === 0 ? "50%_25%" : "0%_0%"}]`} />
 
                                     <div className="absolute inset-0 flex w-full flex-col items-start justify-center bg-gradient-to-r from-black/80 to-transparent to-50% p-6">
                                         <div className="mx-auto w-3/5">
                                             <div className="w-96 space-y-4">
-                                                <h2 className="text-4xl font-bold text-white">{item.Title}</h2>
+                                                <h2 className="text-4xl text-white">{item.Title}</h2>
                                                 <p className="text-md text-white">{item.Subtitle}</p>
                                                 <Link
                                                     to="/contact-us"
@@ -95,7 +84,7 @@ export default function Home() {
 
                     <div className="mx-auto flex w-3/5 justify-between gap-20 pt-7">
                         <div className="mb-6 w-5/12">
-                            <h2 className="text-xl">{data[1].Title}</h2>
+                            <h2 className="text-xl font-light">{data[1].Title}</h2>
                             <p className="my-6 text-xs leading-5 text-gray-700">
                                 {lorems
                                     .slice(0, 2)
@@ -107,7 +96,9 @@ export default function Home() {
                                     <li key={index}>{line}</li>
                                 ))}
                             </ul>
-                            <div className="mt-4 inline-block rounded-md bg-sky-600 px-6 py-3 text-xs font-extrabold text-white">Learn more</div>
+                            <div className="mt-4 inline-block cursor-not-allowed rounded-md bg-sky-600 px-6 py-3 text-xs font-extrabold text-white">
+                                Learn more
+                            </div>
                         </div>
                         <img
                             src="https://bluespaceltd.co.uk/wp-content/uploads/2024/04/BLU_OfficeDesign_CompanyCulture-scaled-e1713265104126.jpg"
@@ -129,7 +120,7 @@ export default function Home() {
                                                 .join(" ")}
                                         </p>
                                     </div>
-                                    <div className="mt-auto inline-block w-28 rounded-md bg-blue-50 px-6 py-3 text-center text-xs font-bold text-sky-700">
+                                    <div className="mt-auto inline-block w-28 cursor-not-allowed rounded-md bg-blue-50 px-6 py-3 text-center text-xs font-bold text-sky-700">
                                         Log in
                                     </div>
                                 </div>
