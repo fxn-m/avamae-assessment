@@ -9,8 +9,8 @@ import NavBar from "./components/NavBar";
 
 function App() {
     return (
-        <Router basename="/avamae-assessment">
-            <div className="App flex h-screen flex-col">
+        <Router basename="/avamae-assessment/">
+            <div className="App flex min-h-screen flex-col">
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<Home />} />
