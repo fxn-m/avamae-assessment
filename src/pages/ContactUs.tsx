@@ -48,9 +48,6 @@ const SuccessMessage = ({ onReset }: { onReset: () => void }) => {
     );
 };
 
-const corsProxy = "https://cors-anywhere.herokuapp.com/";
-const apiUrl = "https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit";
-
 export default function ContactUs() {
     const {
         register,
@@ -94,7 +91,7 @@ export default function ContactUs() {
         setIsSubmitting(false);
 
         try {
-            const response = await fetch(`${corsProxy}${apiUrl}`, {
+            const response = await fetch("https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
