@@ -2,7 +2,7 @@ import posts from "@/assets/posts.json";
 
 export default function AboutUs() {
     return (
-        <div className="mx-auto my-10 w-3/5 space-y-6 text-xs leading-5 text-gray-600">
+        <div className="mx-auto my-10 w-full space-y-6 px-4 text-xs leading-5 text-gray-600 sm:w-3/5">
             <h1 className="mt-4 text-xl">About Us</h1>
 
             <div className="space-y-6">

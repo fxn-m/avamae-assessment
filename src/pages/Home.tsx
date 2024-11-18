@@ -55,9 +55,11 @@ export default function Home() {
                         <div className="swiper-button-next hidden aspect-square rounded bg-white/30 sm:flex">
                             <Triangle className="h-3 rotate-90 fill-current text-white" />
                         </div>
+
                         <div className="swiper-button-prev hidden aspect-square rounded bg-white/30 sm:flex">
                             <Triangle className="h-3 -rotate-90 fill-current text-white" />
                         </div>
+
                         {data.slice(0, 2).map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="relative mb-6 h-[445px] w-full overflow-hidden">
@@ -68,6 +70,7 @@ export default function Home() {
                                             <div className="w-full space-y-4 sm:w-96">
                                                 <h2 className="text-4xl text-white">{item.Title}</h2>
                                                 <p className="text-md text-white">{item.Subtitle}</p>
+
                                                 <Link
                                                     to="/contact-us"
                                                     className="mt-4 inline-block w-full rounded-md bg-sky-600 px-6 py-3 text-center text-xs font-extrabold text-white sm:w-auto"
@@ -91,15 +94,18 @@ export default function Home() {
                                     .map((lorem) => lorem.body)
                                     .join(" ")}
                             </p>
+
                             <ul className="list-inside list-disc text-xs font-semibold leading-7 text-gray-700">
                                 {makeBulletPoints(lorems[0].body).map((line: string, index: number) => (
                                     <li key={index}>{line}</li>
                                 ))}
                             </ul>
+
                             <Link to="/about-us" className="mt-4 inline-block rounded-md bg-sky-600 px-6 py-3 text-xs font-extrabold text-white">
                                 Learn more
                             </Link>
                         </div>
+
                         <img
                             src="https://bluespaceltd.co.uk/wp-content/uploads/2024/04/BLU_OfficeDesign_CompanyCulture-scaled-e1713265104126.jpg"
                             className="mb-4 h-80 rounded-md object-cover"
@@ -130,6 +136,7 @@ export default function Home() {
                             <h1 className="text-xl font-light">{lorems[0].title}</h1>
                             <h2 className="">{lorems[1].title}</h2>
                         </div>
+
                         <div className="gap-8 text-left text-xs leading-5 text-gray-700 md:columns-3">
                             <p className="font-semibold">{lorems[0].body + lorems[1].body}</p>
                             <br />
@@ -147,13 +154,13 @@ export default function Home() {
                                 </span>
                             ))}
                         </div>
+
                         <Link to="/contact-us" className="mt-4 inline-block rounded-md bg-sky-600 px-6 py-3 text-xs font-extrabold text-white">
                             Contact Us
                         </Link>
                     </div>
                 </>
             ) : (
-                // Loading spinner with Lucide
                 <div className="flex h-screen items-center justify-center">
                     <Loader2Icon height={60} width={60} className="animate-spin text-sky-600" />
                 </div>
