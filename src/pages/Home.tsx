@@ -85,7 +85,7 @@ export default function Home() {
                         ))}
                     </Swiper>
 
-                    <div className="mx-auto flex w-full flex-col-reverse justify-between gap-4 px-7 pt-7 sm:flex-row sm:gap-20 lg:w-3/5 lg:px-0">
+                    <div className="mx-auto flex w-full flex-col-reverse justify-between gap-4 px-7 pt-7 xl:w-3/5 xl:flex-row xl:gap-20 xl:px-0">
                         <div className="mb-6">
                             <h2 className="text-xl font-light">{data[1].Title}</h2>
                             <p className="my-6 text-xs leading-5 text-gray-700 lg:w-11/12">
@@ -108,14 +108,14 @@ export default function Home() {
 
                         <img
                             src="https://bluespaceltd.co.uk/wp-content/uploads/2024/04/BLU_OfficeDesign_CompanyCulture-scaled-e1713265104126.jpg"
-                            className="mb-4 h-80 rounded-md object-cover"
+                            className="my-auto h-80 rounded-md object-cover"
                         />
                     </div>
 
                     <div className="relative mb-6 mt-10 w-full overflow-hidden sm:h-[445px]">
                         <img src={data[2].ImageUrl} className="min-h-[450px] w-auto object-cover object-center sm:w-full sm:object-[50%_10%]" />
-                        <div className="absolute inset-0 mx-auto my-auto flex w-full flex-col items-start justify-center rounded-sm p-4 sm:w-4/5 sm:p-12 lg:p-16">
-                            <div className="flex h-full w-full flex-col justify-between bg-black/50 p-8 lg:w-1/2">
+                        <div className="absolute inset-0 mx-auto my-auto flex w-full flex-col items-start justify-center rounded-sm p-4 sm:w-4/5 sm:py-8 xl:w-3/5 xl:py-12">
+                            <div className="flex h-full w-full flex-col justify-between bg-black/50 p-8 sm:w-2/3 xl:w-1/2">
                                 <h2 className="text-xl text-white">{data[2].Title}</h2>
                                 <p className="text-xs leading-5 text-white">
                                     {lorems
