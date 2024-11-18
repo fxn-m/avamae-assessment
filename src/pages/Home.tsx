@@ -63,7 +63,7 @@ export default function Home() {
                         {data.slice(0, 2).map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="relative mb-6 h-[445px] w-full overflow-hidden">
-                                    <img src={item.ImageUrl} className={`h-full w-full object-cover object-[${index === 0 ? "50%_25%" : "0%_0%"}]`} />
+                                    <img src={item.ImageUrl} className={`h-full w-full object-cover ${index == 0 ? "object-[50%_15%]" : ""}`} />
 
                                     <div className="absolute inset-0 flex w-full flex-col items-start justify-center bg-gradient-to-r from-black/80 to-transparent to-100% p-6 sm:to-50%">
                                         <div className="w-full sm:mx-auto sm:w-4/5 md:w-3/5">
