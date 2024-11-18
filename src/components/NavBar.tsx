@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 function NavBar() {
     return (
         <nav className="h-14 border-b border-gray-200">
-            <div className="mx-auto flex h-full w-3/5 items-center justify-between">
-                <div className="flex items-center space-x-3">
+            <div className="w-fullitems-center mx-auto flex h-full justify-between md:w-4/5">
+                <Link to="/" className="mx-auto flex items-center space-x-3 sm:mx-0">
                     <img src="https://ccsrents.com/wp-content/uploads/2020/12/cropped-CCSLogofavicon.png" className="h-10" alt="Logo" />
                     <p className="text-xl font-bold">COMPANY</p>
-                </div>
+                </Link>
 
-                <div className="flex items-center space-x-10">
+                <div className="hidden items-center space-x-10 sm:flex">
                     <div className="flex space-x-10 text-xs font-semibold tracking-widest text-gray-600">
                         <Link to="/" className="hover:text-blue-500">
                             HOME

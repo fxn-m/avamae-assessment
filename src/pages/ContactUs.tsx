@@ -127,8 +127,8 @@ export default function ContactUs() {
     };
 
     return (
-        <div className="mx-auto flex w-3/5 flex-1 flex-col md:flex-row md:space-x-6">
-            <div className="w-full py-8 text-xs text-gray-700 md:w-1/2">
+        <div className="mx-auto flex w-full flex-1 flex-col px-4 sm:w-3/5 md:flex-row md:space-x-6">
+            <div className="w-full py-8 text-xs text-gray-700 lg:w-1/2">
                 {submissionSuccessful === true ? (
                     <SuccessMessage onReset={handleReset} />
                 ) : (
@@ -145,7 +145,7 @@ export default function ContactUs() {
                         </p>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-gray-500">
-                            <div className="flex gap-4">
+                            <div className="flex flex-col gap-4 sm:flex-row">
                                 <div className="flex-1">
                                     <FieldLabel>Full Name</FieldLabel>
                                     <input id="FullName" type="text" {...register("FullName")} className={fieldInputClasses} disabled={isSubmitting} />
@@ -207,7 +207,7 @@ export default function ContactUs() {
 
                             {showAddressDetails && (
                                 <div className="space-y-4">
-                                    <div className="flex space-x-4">
+                                    <div className="flex flex-col gap-4 sm:flex-row">
                                         <div className="flex-1">
                                             <FieldLabel>Address Line 1</FieldLabel>
                                             <input
@@ -231,7 +231,7 @@ export default function ContactUs() {
                                         </div>
                                     </div>
 
-                                    <div className="flex space-x-4">
+                                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                                         <div className="flex-1">
                                             <FieldLabel>City/Town</FieldLabel>
                                             <input
@@ -299,8 +299,8 @@ export default function ContactUs() {
                 )}
             </div>
 
-            <div className="flex w-full items-center justify-center md:w-1/2">
-                <img className="aspect-auto h-[82vh] max-w-none rotate-90 object-cover" src="./logo700x700.png" alt="Contact Us" />
+            <div className="hidden items-center justify-center overflow-clip lg:flex lg:w-1/2">
+                <img className="-z-10 aspect-auto h-[82vh] max-w-none rotate-90 object-cover" src="./logo700x700.png" alt="Contact Us" />
             </div>
         </div>
     );

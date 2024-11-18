@@ -17,7 +17,7 @@ function App() {
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact-us" element={<ContactUs />} />
                 </Routes>
-                <div className="footer mx-auto flex h-16 w-3/5 flex-row-reverse items-center border-t text-xs font-light text-gray-400">
+                <div className="footer mx-auto flex h-16 w-11/12 flex-row items-center justify-center border-t text-center text-xs font-light text-gray-400 sm:w-3/5 sm:justify-end">
                     <p>
                         Website Development by{" "}
                         <a className="underline" href="https://www.avamae.co.uk/">
