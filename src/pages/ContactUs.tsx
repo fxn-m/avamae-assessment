@@ -299,8 +299,8 @@ export default function ContactUs() {
                 )}
             </div>
 
-            <div className="flex w-full items-center justify-center md:w-1/2">
-                <img className="aspect-auto h-[82vh] max-w-none rotate-90 object-cover" src="./logo700x700.png" alt="Contact Us" />
+            <div className="flex w-full items-center justify-center overflow-clip md:w-1/2">
+                <img className="-z-10 aspect-auto h-[82vh] max-w-none rotate-90 object-cover" src="./logo700x700.png" alt="Contact Us" />
             </div>
         </div>
     );
